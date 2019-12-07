@@ -1,0 +1,17 @@
+:root {
+    --color-red: hsl(0, 100%, 74%);
+    --color-green: hsl(154, 59%, 51%);
+    --color-blue: hsl(248, 32%, 49%);
+    --color-dark-blue: hsl(249, 10%, 26%);
+    --color-grayish-blue: hsl(246, 25%, 77%);
+    --font-poppins: 'Poppins', sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semi-bold: 600;
+    --font-weight-bold: 700;
+}
+
+body {
+    font-family: var(--font-poppins);
+    font-size: 16px;
+}
