@@ -8,7 +8,6 @@
   
   <title>Frontend Mentor | Intro component with sign up form</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -25,16 +24,16 @@
     <p><span class="try-it-free">Try it free 7 days</span> then $20/mo. thereafter</p>
   </div>
 
-  <form action="POST">
-    <input type="text" placeholder="First Name">
+  <form id="main-form" action="#" method="post">
+    <input id="firstname" name="firstname" type="text" placeholder="First Name">
     <br>
-    <input type="text" placeholder="Last Name">
+    <input id="lastname" name="lastname" type="text" placeholder="Last Name">
     <br>
-    <input type="email" placeholder="Email Address">
+    <input id="email" name="email" type="email" placeholder="Email Address">
     <br>
-    <input type="password" placeholder="Password">
+    <input id="password" name="password" type="password" placeholder="Password">
     <br>
-    <input type="submit" value="Claim your free trial">
+    <input id="submit-button" type="submit" value="Claim your free trial">
     
     <p>By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></p>
   </form>
