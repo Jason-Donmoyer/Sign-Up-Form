@@ -12,51 +12,52 @@ submitButton.addEventListener('click', (e) => {
     // Array to hold inputs that are valid -- also used to check if all inputs are valid
     let dataArr = [];
 
-    
+    // Validates email
     if ((emailInput.value) === '' || (validateEmail(emailInput.value) === false)) {
         e.preventDefault();
-        invalidItem(emailInput);
-        // emailInput.nextElementSibling.style.display = 'block';
-        // emailInput.style.backgroundImage = 'url(images/icon-error.svg)';
-        // emailInput.style.borderColor = 'var(--color-red)';
+        invalidInput(emailInput);
         emailInput.style.color = 'var(--color-red)';
     } else {
-        emailInput.nextElementSibling.style.display = 'none';
-        emailInput.style.backgroundImage = 'none';
-        emailInput.style.borderColor = 'var(--color-grayish-blue)';
-        emailInput.style.color = '#000';
+        validInput(emailInput);
         dataArr.push(emailInput);
     }
 
-    
     // Loop through inputs to validate
     for (let i = 0; i < inputArr.length; i++) {
         
         if (inputArr[i].value === '') {
             e.preventDefault();
-            inputArr[i].nextElementSibling.style.display = 'block';
-            inputArr[i].style.backgroundImage = 'url(images/icon-error.svg)';
-            inputArr[i].style.borderColor = 'var(--color-red)';
+            invalidInput(inputArr[i]);
         } else if (inputArr[i].value !== '') {
-            inputArr[i].nextElementSibling.style.display = 'none';
-            inputArr[i].style.backgroundImage = 'none';
-            inputArr[i].style.borderColor = 'var(--color-grayish-blue)';
+            validInput(inputArr[i]);
             dataArr.push(inputArr[i]);
         }    
     }
 
     console.log(dataArr);
+
+    // If dataArr length is equal to total amount of inputs form is submitted and alert is triggered
     if (dataArr.length === 4) {
-        alert('Thank You! Your information has been submitted.');
+        let firstName = document.querySelector('[name=firstname]').value;
+        alert(`Thank You ${firstName}! Your information has been submitted.`);
     }
 });
 
-function invalidItem(input) {
+// function to add styles to input if invalid
+function invalidInput(input) {
     input.nextElementSibling.style.display = 'block';
     input.style.backgroundImage = 'url(images/icon-error.svg)';
     input.style.borderColor = 'var(--color-red)';
 }
 
+// function to add styles to input if valid
+function validInput(input) {
+    input.nextElementSibling.style.display = 'none';
+    input.style.backgroundImage = 'none';
+    input.style.borderColor = 'var(--color-grayish-blue)';
+}
+
+// function to check for valid email format
 function validateEmail(email) {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
