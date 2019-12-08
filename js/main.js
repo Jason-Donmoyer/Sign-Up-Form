@@ -19,6 +19,7 @@ submitButton.addEventListener('click', (e) => {
         emailInput.style.color = 'var(--color-red)';
     } else {
         validInput(emailInput);
+        emailInput.style.color = '#000';
         dataArr.push(emailInput);
     }
 
