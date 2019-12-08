@@ -153,7 +153,7 @@ h1 {
 
 /******************** MEDIA QUERIES ********************/
 
-@media screen and (min-width: 825px) {
+@media screen and (min-width: 760px) {
     body {
         background-image: url('../images/bg-intro-desktop.png');
     }
@@ -162,11 +162,14 @@ h1 {
         display: flex;
         justify-content: space-around;
         align-items: center;
-
     }
 
     .flex-item {
         max-width: 50%;
+    }
+
+    footer {
+        margin-top: 150px;
     }
 
 }
