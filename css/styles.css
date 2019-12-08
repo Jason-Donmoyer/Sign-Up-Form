@@ -74,6 +74,17 @@ h1 {
     height: 50px;
     margin: 10px auto;
     border-radius: 7px;
+    border-style: solid;
+    border-color: var(--color-grayish-blue);
+    font-weight: var(--font-weight-bold);
+}
+
+#main-form input:hover {
+    border-color: #000;
+}
+#main-form input:focus {
+    border-color: #000;
+    outline: none;
 }
 
 #main-form input::placeholder {
@@ -81,11 +92,48 @@ h1 {
     padding-left: 5px;
 }
 
-#submit-button {
+#main-form p.warning-text {
+    text-align: right;
+    color: var(--color-red);
+    font-size: 10px;
+    margin: 0;
+    margin-top: -10px;
+    margin-bottom: -20px;
+    padding: 0;
+    display: none;
+}
+
+#main-form #submit-button {
     text-transform: uppercase;
     color: #fff;
     background-color: var(--color-green);
     box-shadow: 0px 3px 0px 0px hsl(154, 59%, 45%);
+}
+
+#main-form #submit-button:hover {
+    cursor: pointer;
+    border-color: var(--color-green);
+    background-color: hsl(154, 59%, 65%);
+}
+
+#main-form #submit-button:focus {
+    border-color: var(--color-green);
+}
+
+#main-form p {
+    font-size: 10px;
+    color: var(--color-grayish-blue);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.6;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#main-form p a {
+    text-decoration: none;
+    color: var(--color-red);
+    font-weight: var(--font-weight-semi-bold);
 }
 
 /******************** FOOTER ********************/
